@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "105526341357",
+    "firebase_url": "https://askforspeed.firebaseio.com",
+    "project_id": "askforspeed",
+    "storage_bucket": "askforspeed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105526341357:android:b1508f02d13eaeaa24e6e4",
+        "android_client_info": {
+          "package_name": "moaad.klaib.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105526341357-pa1uq27ldlfglkcvqmjasro7hckhvbj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "moaad.klaib.com",
+            "certificate_hash": "db5263a164fab7973e64232c3ca1c33ff6d3a8d3"
+          }
+        },
+        {
+          "client_id": "105526341357-nq9iip7bp00u0uqiofsd0asjtsf87s7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdjI-czWe7ZfWVYHWO1QuAtM9RJaM6IbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105526341357-nq9iip7bp00u0uqiofsd0asjtsf87s7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

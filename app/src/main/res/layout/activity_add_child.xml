@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addChild">
+
+    <Button
+        android:id="@+id/save2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:text="save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/childphone" />
+
+    <EditText
+        android:id="@+id/fatherphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:hint="father phone"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/childphone"
+        app:layout_constraintStart_toStartOf="@+id/childphone"
+        app:layout_constraintTop_toBottomOf="@+id/fathername" />
+
+    <EditText
+        android:id="@+id/childphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="65dp"
+        android:ems="10"
+        android:hint="child phone"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fatherphone" />
+
+    <EditText
+        android:id="@+id/fathername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:ems="10"
+        android:hint="father name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/fatherphone"
+        app:layout_constraintStart_toStartOf="@+id/fatherphone"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
