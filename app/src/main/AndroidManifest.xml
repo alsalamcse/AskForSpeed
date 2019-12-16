@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".addChild"></activity>
+        <activity android:name=".taskItem"></activity>
+        <activity android:name=".fatherProfile" />
+        <activity android:name=".addChild" />
         <activity android:name=".signup" />
         <activity android:name=".signin" />
         <activity android:name=".wellcome" />
