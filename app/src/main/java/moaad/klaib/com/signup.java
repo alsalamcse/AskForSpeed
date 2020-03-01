@@ -1,5 +1,6 @@
 package moaad.klaib.com;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class signup extends AppCompatActivity {
 
@@ -32,11 +35,12 @@ public class signup extends AppCompatActivity {
 
     {
         boolean isok=true;//if all the fields filled well
-        String Userem=Userem.getText().toString();
-        String pass=pass.getText().toString();
-        int phone=phone.getText().toString();
-        String btnsave1=save1.getText().toString();
-        if(Userem.length()<4 || Userem.indexOf('@')<0 || Userem.indexOf('.')<0)
+
+        String email=Userem.getText().toString();
+        String phone1=phone.getText().toString();
+        String save=save1.getText().toString();
+        String password=pass.getText().toString();
+        if(Userem.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
         {
             Userem.setError( "Wrong Email" );
             isok = false;
@@ -54,13 +58,13 @@ public class signup extends AppCompatActivity {
         }
         if (isok)
         {
-            createAcount(pass,Userem,phone);
+            createAcount(password,email,phone1);
 
         }
 
     }
 
-    private void createAcount(String email, String passw1, String fname1, String lname1, EditText phone) {
+    private void createAcount(String email, String passw1, String fname1) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         Task<AuthResult> authResultTask = auth.createUserWithEmailAndPassword( email, passw1 ).addOnCompleteListener( this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -69,7 +73,7 @@ public class signup extends AppCompatActivity {
                     Toast.makeText( signup.this, "sign up Successful", Toast.LENGTH_SHORT ).show();
                     finish();
                 } else {
-                    em2.setError( "sign up failed" );
+                    Userem.setError( "sign up failed" );
                 }
 
             }

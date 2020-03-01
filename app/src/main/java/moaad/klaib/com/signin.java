@@ -1,19 +1,26 @@
 package moaad.klaib.com;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signin extends AppCompatActivity {
-    private EditText emsign,pssign;
-    private Button signIn1,signUp1;
+    private EditText emSing,psSign;
+    private Button signUp1,login;
+    private CheckBox checkfather,checkson;
 
 
     @Override
@@ -21,14 +28,14 @@ public class signin extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_signin );
 
-        emsign = findViewById( R.id.emSign );
-        pssign = findViewById( R.id.psSign );
-        signIn1 = findViewById( R.id.signIn1 );
-        signUp1 = findViewById( R.id.signUp1 );
+        emSing = findViewById( R.id.emSign );
+        psSign = findViewById( R.id.psSign );
+        login = findViewById( R.id.login );
+         signUp1= findViewById( R.id.signUp1 );
 
 
 
-        signIn1.setOnClickListener( new View.OnClickListener() {
+        signUp1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent( getApplicationContext(),signup.class);
@@ -37,7 +44,7 @@ public class signin extends AppCompatActivity {
 
 
         });
-        signIn1.setOnClickListener( new View.OnClickListener() {
+        login.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dataHandler();
@@ -45,16 +52,16 @@ public class signin extends AppCompatActivity {
         } );
     }
     private void dataHandler() {
-        String email=emsign.getText().toString();
-        String password=pssign.getText().toString();
+        String email=emSing.getText().toString();
+        String password=psSign.getText().toString();
         boolean isok=true;
 
         if(!isValidEmailAddress( email )) {
-            emsign.setError( "email" );
+            emSing.setError( "email" );
             isok=false;
         }
         if (password.length() < 8) {
-            pssign.setError( "password length eror" );
+            psSign.setError( "password length eror" );
             isok=false;
         }
         if(isok)
@@ -63,19 +70,19 @@ public class signin extends AppCompatActivity {
     }
     private void signIn(String email,String pass)
     {
-        FirebaseAuth auth=FirebaseAuth.getInstance();
+        FirebaseAuth auth= FirebaseAuth.getInstance();
         auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener( this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
                             //todo go to ,main screen(all Task activity)
-                            Intent i=new Intent( getApplicationContext(),TempAllTaskActivity.class );
-                            startActivity( i );
+//                            Intent i=new Intent( getApplicationContext(),TempAllTaskActivity.class );
+//                            startActivity( i );
                         }
                         else
                         {
-                            emsign.setError( "email or password is wrong"+task.getException().getMessage());
+                            emSing.setError( "email or password is wrong"+task.getException().getMessage());
                             task.getException().printStackTrace();
                         }
                     }
@@ -94,3 +101,5 @@ public class signin extends AppCompatActivity {
 
     }
 }
+
+

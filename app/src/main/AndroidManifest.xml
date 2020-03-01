@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".taskItem"></activity>
-        <activity android:name=".fatherProfile" />
+        <activity
+            android:name=".AllFriends"
+            android:label="@string/title_activity_all_friends"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".taskItem" />
         <activity android:name=".addChild" />
         <activity android:name=".signup" />
         <activity android:name=".signin" />
